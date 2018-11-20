@@ -1,0 +1,42 @@
+@mixin myPalette_item {
+    font: {
+        family: Arial;
+        size: 1em;
+        weight: bold;
+    }
+    color: white;
+    width: 100px;
+    height: 100px;
+}
+
+@mixin buildPalette($color_base, $num_items, $percent, $ejercicio) {
+    @for $i from 1 through $num_items {
+        .myPalette_item_darken-#{$color_base}-#{$i}-ejercicio-#{$ejercicio} {
+            background-color: darken($color: $color_base, $amount: $percent * $i);
+        }
+    }
+    .Base-#{$color_base}-ejercicio-#{$ejercicio} {
+        background-color: $color_base;
+    }
+    @for $i from 1 through $num_items {
+        .myPalette_item_lighten-#{$color_base}-#{$i}-ejercicio-#{$ejercicio} {
+            background-color: lighten($color: $color_base, $amount: $percent * $i);
+        }
+    }
+}
+
+@mixin buildPalette2($color_base, $num_items, $percent, $ejercicio, $theme) {
+    @for $i from 1 through $num_items {
+        #{$theme} .myPalette_item_darken-#{$i}-ejercicio-#{$ejercicio} {
+            background-color: darken($color: $color_base, $amount: $percent * $i);
+        }
+    }
+    #{$theme} .Base-ejercicio-#{$ejercicio} {
+        background-color: $color_base;
+    }
+    @for $i from 1 through $num_items {
+        #{$theme} .myPalette_item_lighten-#{$i}-ejercicio-#{$ejercicio} {
+            background-color: lighten($color: $color_base, $amount: $percent * $i);
+        }
+    }
+}
