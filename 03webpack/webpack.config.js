@@ -1,10 +1,24 @@
 module.exports = {
-    entry: ['./src/js/index.js'],
+    resolve: {
+        extensions: ['.js', '.ts']
+    },
+    entry: {
+        app: './src/ts/indexFromTS.ts'
+    },
     output: {
-        filename: 'js/index.js',
+        filename: 'js/indexFromTS.js',
     },
     module: {
         rules: [
+            {
+                test: /\.(ts|tsx)$/,
+                exclude: /node_modules/,
+                loader: 'awesome-typescript-loader',
+                options: {
+                    useBabel: true,
+                    "babelCore": "@babel/core", // needed for Babel v7
+                },
+            },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
