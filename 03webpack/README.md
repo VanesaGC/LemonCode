@@ -3,7 +3,7 @@
 - [Paso 1](https://github.com/VanesaGC/LemonCode/commit/2066929aa155157c8a8bdf3cebc2c5f0cb3befa1) Tenga el bundling montado con webpack.
 - [Paso 2](https://github.com/VanesaGC/LemonCode/commit/b1d3888f8da303b694412fc4a3e7407a4c98931a) Muestre un logo (si queréis el de lemoncode).
 - [Paso 3](https://github.com/VanesaGC/LemonCode/commit/d944631ec164cd3ece56d9d4b1020d606e632737) Este montada con typescript.
-- Tenga el texto de hola mundo estilado con SASS.
+- [Paso 4](https://github.com/VanesaGC/LemonCode/commit/00809b4871c928983c0b172e1536bdb5c2f29bea) Tenga el texto de hola mundo estilado con SASS.
 
 ## Bonus points:
 - Muestra un hola mundo desarrollado con React.
