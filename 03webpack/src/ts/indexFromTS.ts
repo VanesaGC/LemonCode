@@ -1,5 +1,5 @@
 
-const logoImg: string =  "../dist/img/logo_2.png";
+const logoImg: string =  "../src/img/logo_2.png";
 
 const saludo: string = "Hello Webpack con TypeScript!!";
 

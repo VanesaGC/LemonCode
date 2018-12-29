@@ -1,0 +1,19 @@
+$color-primary: hotpink;
+$fontFamily_Titles: 'Franklin Gothic Medium',
+'Arial Narrow',
+Arial,
+sans-serif;
+$widthLogo: 200px;
+$sizeTitle: 2em;
+h4 {
+    color: $color-primary;
+    font-style: italic;
+    font-family: $fontFamily_Titles;
+    font-size: $sizeTitle;
+}
+
+img {
+    display: block;
+    width: $widthLogo;
+    margin-bottom: 1em;
+}
