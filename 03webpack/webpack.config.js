@@ -3,10 +3,10 @@ var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     resolve: {
-        extensions: ['.js', '.ts']
+        extensions: ['.js', '.ts', 'tsx']
     },
     entry: {
-        app: './src/ts/indexFromTS.ts',
+        app: './src/tsx/index.tsx',
         appStyles: [
             './src/sass/mystyles.scss',
         ],
