@@ -14,6 +14,7 @@ o Pista: https://webpack.js.org/guides/environment-variables/).
 - [Bonus 4](https://github.com/VanesaGC/LemonCode/commit/62b6eabaeadf572f39a4aacb8d7cefc1e04b8701) Tener una medida de cuanto mide cada librería:
 o pista: mirar BundleAnalyzerPlugin. -> Medidas disponibles en http://127.0.0.1:8888/
 - Montar lo mismo con Parcel.
+    + [Parte 1] Montado en typescript
 
 ## También valdría como básico:
 - Migrar el ejemplo de webpack 3 de entors de producción y desarrollo a webpack 4 (haciendo fork y pidiendo pull request y colocándolo en la carpeta de webpack 4): https://github.com/Lemoncode/webpack-by-sample/tree/master/__older_versions/version%203/03%20Environments/04%20Production%20Configuration
