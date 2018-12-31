@@ -11,8 +11,8 @@
 o Pista: https://webpack.js.org/guides/production/
 - [Bonus 3](https://github.com/VanesaGC/LemonCode/commit/7381e57be12915e31c343a1efe436224f1765794) Tener variables de entorno para desarrollo o producción:
 o Pista: https://webpack.js.org/guides/environment-variables/).
-- Tener una medida de cuanto mide cada librería:
-o pista: mirar BundleAnalyzerPlugin.
+- [Bonus 4](https://github.com/VanesaGC/LemonCode/commit/62b6eabaeadf572f39a4aacb8d7cefc1e04b8701)Tener una medida de cuanto mide cada librería:
+o pista: mirar BundleAnalyzerPlugin. -> Medidas disponibles en http://127.0.0.1:8888/
 - Montar lo mismo con Parcel.
 
 ## También valdría como básico:
