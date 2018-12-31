@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --inline --hot --opent --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "start": "webpack-dev-server --inline --hot --opent --config webpack.dev.js --env.NODE_ENV=local --env.production=false --progress",
+    "build": "webpack --config webpack.prod.js --env.NODE_ENV=local --env.production --progress"
   },
   "author": "",
   "license": "ISC",
