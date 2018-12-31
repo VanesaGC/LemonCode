@@ -1,6 +1,8 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 module.exports = env => {
 
     // Use env.<YOUR VARIABLE> here:
@@ -71,6 +73,7 @@ module.exports = env => {
             new MiniCssExtractPlugin({
                 filename: "[name].css"
             }),
+            new BundleAnalyzerPlugin(),
         ],
     };
 };
