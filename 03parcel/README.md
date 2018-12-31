@@ -16,7 +16,7 @@ o pista: mirar BundleAnalyzerPlugin. -> Medidas disponibles en http://127.0.0.1:
 - Montar lo mismo con Parcel.
     + [Parte 1](https://github.com/VanesaGC/LemonCode/commit/8c27ddf5fa6d2ce01ef03c2f18a5e2cddab5cad2) Montado en typescript
 
-    + [Parte 2] (https://github.com/VanesaGC/LemonCode/commit/8cea02b1859f1d016e948455ee6ed4e0fc235da6) Montado en React
+    + [Parte 2](https://github.com/VanesaGC/LemonCode/commit/8cea02b1859f1d016e948455ee6ed4e0fc235da6) Montado en React
 
 ## También valdría como básico:
 - Migrar el ejemplo de webpack 3 de entors de producción y desarrollo a webpack 4 (haciendo fork y pidiendo pull request y colocándolo en la carpeta de webpack 4): https://github.com/Lemoncode/webpack-by-sample/tree/master/__older_versions/version%203/03%20Environments/04%20Production%20Configuration
