@@ -1,15 +1,17 @@
 <template>
-  <tr>
-    <td :class="$style.column">
-      <img :src="member.avatar_url" :class="$style.image">
-    </td>
-    <td :class="$style.column">
-      <span>{{member.id}}</span>
-    </td>
-    <td :class="$style.column">
-      <span>{{member.login}}</span>
-    </td>
-  </tr>
+  
+    <tr>
+      <td :class="$style.column">
+        <img :src="member.avatar_url" :class="$style.image">
+      </td>
+      <td :class="$style.column">
+        <span>{{member.id}}</span>
+      </td>
+      <td :class="$style.column">
+        <span>{{member.login}}</span>
+      </td>
+    </tr>
+  
 </template>
 
 <script lang="ts">

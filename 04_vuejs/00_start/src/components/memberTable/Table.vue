@@ -1,10 +1,46 @@
 <template>
-<v-app>
-  <div>
-    <h2>Member Page</h2>
-    <input :value="organization" @input="organization = $event.target.value"/>
-    <p>Search: {{organization}}</p>
-    <button @click="loadMembers">Load</button>
+  <v-app>
+    <v-form>
+      <v-container>
+        <v-layout column>
+          <v-flex xs12>
+            <h2>Member Page</h2>
+          </v-flex>
+        </v-layout>
+        <v-layout row>
+          <v-flex xs12 sm6 md3>
+            <v-text-field
+              label="Organization"
+              placeholder="Write an organization"
+              :value="organization"
+              @input="(newValue) => changeOrganization(newValue)"
+              prepend-icon="business"
+              clear-icon="clear"
+              clearable
+              :append-outer-icon="organization ? 'search' : ''"
+              @click:append-outer="loadMembers"
+              @keyup.enter.native="loadMembers"
+            ></v-text-field>
+            <p>
+              Search: {{organization}}
+              <input @keyup.enter="loadMembers">
+            </p>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </v-form>
+
+    <v-data-table :headers="headers" :items="members" class="elevation-1">
+      <template slot="items" slot-scope="props">
+        <td class="text-xs-center $style.column">
+          <img :src="props.item.avatar_url" :class="$style.image">
+        </td>
+        <td class="text-xs-center">{{ props.item.id }}</td>
+        <td class="text-xs-center">{{ props.item.login }}</td>
+      </template>
+    </v-data-table>
+
+    <!--
     <table :class="$style.table">
       <thead>
         <member-head/>
@@ -14,8 +50,7 @@
           <member-row :key="member.id" :member="member"/>
         </template>
       </tbody>
-    </table>
-  </div>
+    </table>-->
   </v-app>
 </template>
 
@@ -31,28 +66,50 @@ export default Vue.extend({
   components: { MemberHead, MemberRow },
   data: () => ({
     organization: "lemoncode",
-    members: [] as Member[]
+    members: [] as Member[],
+    headers: [
+      {
+        text: "Avatar",
+        align: "left",
+        sortable: false,
+        value: "avatar_url"
+      },
+      { text: "Id", value: "id" },
+      { text: "Name", value: "login" }
+    ]
   }),
   methods: {
-    loadMembers: function() {
+    loadMembers: function(event) {
+      if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
       getAllMembers(this.organization).then(members => {
         this.members = members;
       });
     },
-    onChange(event) {
-     this.organization = event.target.value;
-  },
+    changeOrganization(newOrganization) {
+      this.organization = newOrganization;
+    }
   }
 });
 </script>
 
 <style module>
-.table {
+/*.table {
   border-collapse: collapse;
   width: 100%;
 }
 
 .table tbody tr:nth-of-type(odd) {
   background-color: rgba(0, 0, 0, 0.05);
+}*/
+.image {
+  max-width: 10rem;
+}
+
+.column {
+  width: 33.33%;
+  text-align: center;
 }
 </style>
