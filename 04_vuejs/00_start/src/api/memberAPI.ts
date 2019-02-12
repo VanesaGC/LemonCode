@@ -1,4 +1,5 @@
 import { Member, createDefaultMember } from "../model/member";
+import { Login, createDefaultLogin } from "../model/login";
 
 const checkStatus = (response: Response): Promise<Response> => {
   if (response.status >= 200 && response.status < 300) {
@@ -35,3 +36,37 @@ export const getAllMembers = (organizationName: string): Promise<Member[]> => {
     .then(response => parseJSON(response))
     .then(data => resolveMembers(data));
 };
+
+//-- Prueba
+
+const resolveMember = (data: any): Promise<Member> => {
+  debugger;
+
+  var member: Member = createDefaultMember();
+
+  member.id = data.id;
+  member.login = data.login;
+  member.avatar_url = data.avatar_url;
+  member.html_url = data.html_url;
+  member.name = data.name;
+  member.created_at = data.created_at;
+  member.updated_at = data.updated_at;
+
+  return Promise.resolve(member);
+};
+
+export const getMemberByLogin = (login: string): Promise<Member> => {
+  debugger;
+  const gitHubMemberUrl: string = `https://api.github.com/users/${login}`;
+
+  return fetch(gitHubMemberUrl, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer e32b8ca49f50ae8fd702ab6d495edd0b22fe1b5e"
+    }
+  })
+    .then(response => checkStatus(response))
+    .then(response => parseJSON(response))
+    .then(data => resolveMember(data));
+};
+//----------

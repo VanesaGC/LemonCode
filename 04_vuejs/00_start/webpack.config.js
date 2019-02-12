@@ -18,7 +18,7 @@ module.exports = {
   mode: "development",
   entry: {
     app: "./main.ts",
-    vendor: ['vue', 'vuetify'],
+    vendor: ['vue', 'vue-router', 'vuetify'],
     vendorStyles: ['../node_modules/vuetify/dist/vuetify.min.css'],
   },
   output: {

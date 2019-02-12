@@ -10,6 +10,7 @@
       <td :class="$style.column">
         <span>{{member.login}}</span>
       </td>
+      
     </tr>
   
 </template>

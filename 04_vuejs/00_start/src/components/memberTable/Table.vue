@@ -37,6 +37,11 @@
         </td>
         <td class="text-xs-center">{{ props.item.id }}</td>
         <td class="text-xs-center">{{ props.item.login }}</td>
+        <td :class="$style.column">
+          <v-btn flat icon :to="`detail/${props.item.login}`">
+          <v-icon>edit</v-icon>
+        </v-btn>
+      </td>
       </template>
     </v-data-table>
 
@@ -75,7 +80,7 @@ export default Vue.extend({
         value: "avatar_url"
       },
       { text: "Id", value: "id" },
-      { text: "Name", value: "login" }
+      { text: "Name", value: "login" },
     ]
   }),
   methods: {
