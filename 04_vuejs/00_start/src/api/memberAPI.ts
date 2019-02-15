@@ -40,31 +40,26 @@ export const getAllMembers = (organizationName: string): Promise<Member[]> => {
 //-- Prueba
 
 const resolveMember = (data: any): Promise<Member> => {
-  debugger;
-
   var member: Member = createDefaultMember();
+
+  var created_at = new Date(data.created_at);
+  var updated_at = new Date(data.updated_at);
 
   member.id = data.id;
   member.login = data.login;
   member.avatar_url = data.avatar_url;
   member.html_url = data.html_url;
   member.name = data.name;
-  member.created_at = data.created_at;
-  member.updated_at = data.updated_at;
+  member.created_at = created_at.toLocaleString('en-GB');
+  member.updated_at = updated_at.toLocaleString('en-GB');
 
   return Promise.resolve(member);
 };
 
 export const getMemberByLogin = (login: string): Promise<Member> => {
-  debugger;
   const gitHubMemberUrl: string = `https://api.github.com/users/${login}`;
 
-  return fetch(gitHubMemberUrl, {
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: "Bearer e32b8ca49f50ae8fd702ab6d495edd0b22fe1b5e"
-    }
-  })
+  return fetch(gitHubMemberUrl)
     .then(response => checkStatus(response))
     .then(response => parseJSON(response))
     .then(data => resolveMember(data));

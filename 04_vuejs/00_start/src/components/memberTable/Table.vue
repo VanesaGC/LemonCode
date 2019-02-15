@@ -30,7 +30,8 @@
       </v-container>
     </v-form>
 
-    <v-data-table :headers="headers" :items="members" class="elevation-1">
+    <!--<v-data-table :headers="headers" :items="members" hide-actions :pagination.sync="pagination">-->
+    <v-data-table :headers="headers" :items="members">
       <template slot="items" slot-scope="props">
         <td class="text-xs-center $style.column">
           <img :src="props.item.avatar_url" :class="$style.image">
@@ -39,10 +40,13 @@
         <td class="text-xs-center">{{ props.item.login }}</td>
         <td :class="$style.column">
           <v-btn flat icon :to="`detail/${props.item.login}`">
-          <v-icon>edit</v-icon>
+          <v-icon>visibility</v-icon>
         </v-btn>
       </td>
       </template>
+      <!--<div class="text-xs-center pt-2">
+        <v-pagination v-model="pagination.page" :length="pages"></v-pagination>
+      </div>-->
     </v-data-table>
 
     <!--
@@ -101,14 +105,6 @@ export default Vue.extend({
 </script>
 
 <style module>
-/*.table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.table tbody tr:nth-of-type(odd) {
-  background-color: rgba(0, 0, 0, 0.05);
-}*/
 .image {
   max-width: 10rem;
 }

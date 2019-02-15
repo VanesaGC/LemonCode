@@ -16,14 +16,11 @@ export default Vue.extend({
     member: createDefaultMember()
   }),
   beforeMount() {
-      console.log("hello");
     const id = this.id || "";
     console.log("hello2");
     getMemberByLogin(id)
       .then(member => {
-          console.log("hello3");
         this.member = member;
-        console.log("hello4: " + member.name);
       })
       .catch(error => console.log("Error con getMemberByLogin: " + error));
   },

@@ -9,7 +9,7 @@ import { MemberDetail } from "./../../components";
 
 
 export default Vue.extend({
-  name: "MemberDetail",
+  name: "MemberDetailPage",
   components: { MemberDetail },
   props: {
   member: {}
