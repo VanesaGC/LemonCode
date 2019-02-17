@@ -40,9 +40,9 @@
         <td class="text-xs-center">{{ props.item.login }}</td>
         <td :class="$style.column">
           <v-btn flat icon :to="`detail/${props.item.login}`">
-          <v-icon>visibility</v-icon>
-        </v-btn>
-      </td>
+            <v-icon>visibility</v-icon>
+          </v-btn>
+        </td>
       </template>
       <!--<div class="text-xs-center pt-2">
         <v-pagination v-model="pagination.page" :length="pages"></v-pagination>
@@ -84,7 +84,7 @@ export default Vue.extend({
         value: "avatar_url"
       },
       { text: "Id", value: "id" },
-      { text: "Name", value: "login" },
+      { text: "Name", value: "login" }
     ]
   }),
   methods: {
