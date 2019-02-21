@@ -1,83 +1,31 @@
-import * as React from 'react';
-import { history } from '../../history';
-import {
-  LoginEntity,
-  createEmptyLoginEntity,
-  LoginFormErrors,
-  createEmptyLoginFormErrors,
-} from './viewModel';
-import { validations } from './validations';
-import { LoginPage } from './page';
-import { routes } from '../../common/constants/routes';
-import { login } from '../../rest-api/api/login';
-import { mapLoginEntityVMToModel } from './mappers';
-import { FieldValidationResult } from 'lc-form-validation';
+import { connect } from "react-redux";
+import { State } from "../reducers";
+import { updateLoginEntityField } from "./actions/updateLoginEntityField";
+import { loginRequest } from "./actions/loginRequest";
+import { LoginEntity } from "./viewModel";
+import { LoginPage } from "./page";
 
-interface State {
-  loginEntity: LoginEntity;
-  loginFormErrors: LoginFormErrors;
-}
+const mapStateToProps = (state: State) => ({
+  loginEntity: state.login.loginEntity,
+  loginFormErrors: state.login.loginFormErrors
+});
 
-export class LoginPageContainer extends React.PureComponent<{}, State> {
-  state = {
-    loginEntity: createEmptyLoginEntity(),
-    loginFormErrors: createEmptyLoginFormErrors(),
-  };
+const mapDispatchToProps = dispatch => ({
+  updateField: (loginEntity: LoginEntity) => (fieldName: string, value: any) =>
+    dispatch(updateLoginEntityField(loginEntity, fieldName, value)),
+  doLogin: (loginEntity: LoginEntity) => () =>
+    dispatch(loginRequest(loginEntity))
+});
 
-  updateField = (fieldName: string, value: any) => {
-    validations
-      .validateField(this.state.loginEntity, fieldName, value)
-      .then((fieldValidationResult) => {
-        this.setState({
-          loginEntity: {
-            ...this.state.loginEntity,
-            [fieldName]: value,
-          },
-          loginFormErrors: {
-            ...this.state.loginFormErrors,
-            [fieldName]: fieldValidationResult,
-          },
-        });
-      });
-  }
+const mergeProps = (stateProps, dispatchProps, ownProps) => ({
+  ...ownProps,
+  ...stateProps,
+  updateField: dispatchProps.updateField(stateProps.loginEntity),
+  doLogin: dispatchProps.doLogin(stateProps.loginEntity)
+});
 
-  doLogin = () => {
-    validations
-      .validateForm(this.state.loginEntity)
-      .then((formValidationResult) => {
-        formValidationResult.succeeded
-          ? this.loginRequest()
-          : this.displayErrors(formValidationResult.fieldErrors);
-      });
-  }
-
-  loginRequest = () => {
-    const loginEntity = mapLoginEntityVMToModel(this.state.loginEntity);
-    login(loginEntity)
-      .then(() => {
-        history.push(routes.members);
-      })
-      .catch(alert);
-  }
-
-  displayErrors = (fieldErrors: { [key: string]: FieldValidationResult }) => {
-    this.setState({
-      ...this.state,
-      loginFormErrors: {
-        ...this.state.loginFormErrors,
-        ...fieldErrors,
-      },
-    });
-  }
-
-  render() {
-    return (
-      <LoginPage
-        loginEntity={this.state.loginEntity}
-        loginFormErrors={this.state.loginFormErrors}
-        updateField={this.updateField}
-        doLogin={this.doLogin}
-      />
-    );
-  }
-}
+export const LoginPageContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+  mergeProps
+)(LoginPage);
