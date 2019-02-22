@@ -1,17 +1,18 @@
-import * as React from 'react';
-import { connect } from 'react-redux';
-import { State } from '../../reducers';
+import * as React from "react";
+import { connect } from "react-redux";
+import { State } from "../../reducers";
+import { mapMemberListModelToVM } from "./mappers";
+import { getMembersVM } from "./selectors";
 import { fetchMembers } from './actions/fetchMembers';
 import { Member } from './viewModel';
-import { MemberListPage } from './page';
-import { getMembersVM } from './selectors';
+import { MemberListPage } from "./page";
 
 const mapStateToProps = (state: State) => ({
-  members: getMembersVM(state),
+  members: mapMemberListModelToVM(state.members)
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  fetchMembers: () => dispatch(fetchMembers()),
+const mapDispatchToProps = dispatch => ({
+  fetchMembers: () => dispatch(fetchMembers())
 });
 
 interface Props {
@@ -25,11 +26,7 @@ class PageContainer extends React.PureComponent<Props, {}> {
   }
 
   render() {
-    return (
-      <MemberListPage
-        members={this.props.members}
-      />
-    );
+    return <MemberListPage members={this.props.members} />;
   }
 }
 
