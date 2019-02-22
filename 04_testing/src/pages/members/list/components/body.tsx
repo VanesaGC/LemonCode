@@ -18,3 +18,4 @@ export const Body: React.StatelessComponent<Props> = (props) => (
     }
   </tbody>
 );
+

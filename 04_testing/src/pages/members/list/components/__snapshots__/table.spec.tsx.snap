@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pagesmemberslistcomponents (table) tests should render as expected when is invoked 1`] = `
+<table
+  className="table table-striped"
+>
+  <Component />
+  <Component
+    members={
+      Array [
+        Object {
+          "avatarUrl": "maria.png",
+          "id": 1,
+          "name": "María",
+        },
+        Object {
+          "avatarUrl": "pedro.png",
+          "id": 2,
+          "name": "Pedro",
+        },
+      ]
+    }
+  />
+</table>
+`;
+
+exports[`pagesmemberslistcomponents (table) tests should render as expected when passing required properties 1`] = `
+<table
+  className="table table-striped"
+>
+  <Component />
+  <Component
+    members={
+      Array [
+        Object {
+          "avatarUrl": "maria.png",
+          "id": 1,
+          "name": "María",
+        },
+        Object {
+          "avatarUrl": "pedro.png",
+          "id": 2,
+          "name": "Pedro",
+        },
+      ]
+    }
+  />
+</table>
+`;

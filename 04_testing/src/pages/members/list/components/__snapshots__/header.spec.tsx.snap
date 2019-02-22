@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header tests should render as expected when is invoked 1`] = `
+<thead>
+  <tr>
+    <th>
+      Avatar
+    </th>
+    <th>
+      Id
+    </th>
+    <th>
+      Name
+    </th>
+  </tr>
+</thead>
+`;
+
+exports[`common/components/panel/header tests should render as expected when is invoked 1`] = `
+<thead>
+  <tr>
+    <th>
+      Avatar
+    </th>
+    <th>
+      Id
+    </th>
+    <th>
+      Name
+    </th>
+  </tr>
+</thead>
+`;
+
+exports[`pagesmemberslistcomponents  tests should render as expected when is invoked 1`] = `
+<thead>
+  <tr>
+    <th>
+      Avatar
+    </th>
+    <th>
+      Id
+    </th>
+    <th>
+      Name
+    </th>
+  </tr>
+</thead>
+`;
+
+exports[`pagesmemberslistcomponents (Header) tests should render as expected when is invoked 1`] = `
+<thead>
+  <tr>
+    <th>
+      Avatar
+    </th>
+    <th>
+      Id
+    </th>
+    <th>
+      Name
+    </th>
+  </tr>
+</thead>
+`;
+
+exports[`pagesmemberslistcomponents tests should render as expected when is invoked 1`] = `
+<thead>
+  <tr>
+    <th>
+      Avatar
+    </th>
+    <th>
+      Id
+    </th>
+    <th>
+      Name
+    </th>
+  </tr>
+</thead>
+`;

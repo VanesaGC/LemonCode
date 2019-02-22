@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pagesmemberslistcomponents (row) tests should render as expected when is invoked 1`] = `
+<tr>
+  <td>
+    <img
+      src="maria.png"
+      style={
+        Object {
+          "maxWidth": "10rem",
+        }
+      }
+    />
+  </td>
+  <td>
+    <span>
+      1
+    </span>
+  </td>
+  <td>
+    <span>
+      María
+    </span>
+  </td>
+</tr>
+`;
+
+exports[`pagesmemberslistcomponents (row) tests should render as expected when passing required properties 1`] = `
+<tr>
+  <td>
+    <img
+      src="maria.png"
+      style={
+        Object {
+          "maxWidth": "10rem",
+        }
+      }
+    />
+  </td>
+  <td>
+    <span>
+      1
+    </span>
+  </td>
+  <td>
+    <span>
+      María
+    </span>
+  </td>
+</tr>
+`;
