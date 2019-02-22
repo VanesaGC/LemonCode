@@ -1,10 +1,8 @@
-import { actionIds } from "../actions/actionIds";
+import { actionIds } from '../actions/actionIds';
 import {
-  LoginEntity,
-  createEmptyLoginEntity,
-  LoginFormErrors,
-  createEmptyLoginFormErrors
-} from "../viewModel";
+  LoginEntity, createEmptyLoginEntity,
+  LoginFormErrors, createEmptyLoginFormErrors,
+} from '../viewModel';
 
 export interface LoginState {
   loginEntity: LoginEntity;
@@ -13,7 +11,7 @@ export interface LoginState {
 
 const createEmptyState = (): LoginState => ({
   loginEntity: createEmptyLoginEntity(),
-  loginFormErrors: createEmptyLoginFormErrors()
+  loginFormErrors: createEmptyLoginFormErrors(),
 });
 
 export const loginReducer = (state = createEmptyState(), action) => {
@@ -28,24 +26,18 @@ export const loginReducer = (state = createEmptyState(), action) => {
   return state;
 };
 
-const handleUpdateLoginEntityField = (
-  state: LoginState,
-  { fieldName, value, fieldValidationResult }
-): LoginState => ({
+const handleUpdateLoginEntityField = (state: LoginState, { fieldName, value, fieldValidationResult }): LoginState => ({
   loginEntity: {
     ...state.loginEntity,
-    [fieldName]: value
+    [fieldName]: value,
   },
   loginFormErrors: {
     ...state.loginFormErrors,
-    [fieldName]: fieldValidationResult
-  }
+    [fieldName]: fieldValidationResult,
+  },
 });
 
-const handleUpdateLoginFormErrors = (
-  state: LoginState,
-  loginFormErrors: LoginFormErrors
-): LoginState => ({
+const handleUpdateLoginFormErrors = (state: LoginState, loginFormErrors: LoginFormErrors): LoginState => ({
   ...state,
-  loginFormErrors
+  loginFormErrors,
 });

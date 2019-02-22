@@ -20,13 +20,5 @@
   "coveragePathIgnorePatterns": [
     "/node_modules/",
     "config/test"
-  ],
-  "coverageThreshold": {
-    "src/**/reducers/*.ts": {
-      "branches": 100
-    }
-  },
-  "collectCoverageFrom": [
-    "**/*.{ts,tsx}"
   ]
 }

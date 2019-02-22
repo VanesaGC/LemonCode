@@ -19,6 +19,7 @@ module.exports = merge(common, {
       'react-router',
       'redux',
       'redux-thunk',
+      'reselect',
       'whatwg-fetch',
     ],
     vendorStyles: ['../node_modules/bootstrap/dist/css/bootstrap.css'],

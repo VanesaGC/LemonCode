@@ -1,5 +1,5 @@
-import { actionIds } from "../actions/actionIds";
-import { Member } from "../../../../rest-api/model";
+import { actionIds } from '../actions/actionIds';
+import { Member } from '../../../../rest-api/model';
 
 export type MembersState = Member[];
 
@@ -12,7 +12,6 @@ export const membersReducer = (state = [], action): MembersState => {
   return state;
 };
 
-const handleUpdateMembers = (
-  state: MembersState,
-  members: Member[]
-): MembersState => members;
+const handleUpdateMembers = (state: MembersState, members: Member[]): MembersState => (
+  members
+);

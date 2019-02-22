@@ -3,11 +3,11 @@ import { loginReducer, LoginState } from './login';
 import { membersReducer, MembersState } from './members/list';
 
 export interface State {
-    login: LoginState;
-    members: MembersState;
+  login: LoginState;
+  members: MembersState;
 }
 
 export const reducers = combineReducers<State>({
-    login: loginReducer,
-    members: membersReducer,
+  login: loginReducer,
+  members: membersReducer,
 });
