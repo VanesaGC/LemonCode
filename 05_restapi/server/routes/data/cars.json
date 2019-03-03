@@ -52,5 +52,11 @@
         "name": "test",
         "brand": "testBrand",
         "year_release": "2019"
+    },
+    {
+        "car_id": 3,
+        "name": "test2",
+        "brand": "testBrand2",
+        "year_release": "2018"
     }
 ]
