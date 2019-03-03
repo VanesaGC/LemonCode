@@ -11,6 +11,7 @@ import {
    addCar 
 } from './API/carsApi.double';*/
 
+// XMLHttpRequest
 import { getAllCars, getCarById, addCar } from "./API/carsApi2";
 
 document.addEventListener("DOMContentLoaded", () => {
